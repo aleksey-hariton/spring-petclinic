@@ -27,6 +27,7 @@ pipeline {
         stage('Test') {
             steps {
                 sh 'mvn test'
+                sh 'find .'
                 junit skipPublishingChecks: true, testResults: 'target/*-reports/TEST-*.xml'
             }
         }
